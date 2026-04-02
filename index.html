@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LaunchPad Careers offers professional resume writing, LinkedIn optimization, and career services that help you land your dream job in 30 days or less.">
+    <meta name="keywords" content="resume writing services, professional resume writer, LinkedIn optimization, career coaching, ATS resume, cover letter writing, interview coaching">
+    <meta name="author" content="LaunchPad Careers">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a1628">
+    
+    <meta property="og:title" content="LaunchPad Careers | Land Your Dream Job in 30 Days">
+    <meta property="og:description" content="Professional resume writing and career services that get you noticed, interviewed, and hired.">
+    <meta property="og:type" content="website">
+    
+    <title>LaunchPad Careers | Professional Resume Writing & Career Services</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a1628'/%3E%3Cpath d='M50 15 L62 40 L50 32 L38 40 Z' fill='%23f97316'/%3E%3Crect x='42' y='38' width='16' height='30' rx='3' fill='%23f97316'/%3E%3Cellipse cx='50' cy='78' rx='8' ry='12' fill='%23fbbf24'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0a1628;
+            --primary-light: #1a2d4a;
+            --accent: #f97316;
+            --accent-light: #fb923c;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --success: #10b981;
+            --error: #ef4444;
+            --gradient-primary: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+            --gradient-accent: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+            --shadow-glow: 0 0 30px rgba(249,115,22,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-700);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== PRELOADER ========== */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .preloader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            margin-top: 20px;
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ========== NAVBAR ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .nav-link {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--white);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-accent);
+            color: var(--white) !important;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(249,115,22,0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .mobile-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+
+        .hero-orb-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            top: -20%;
+            right: -10%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero-orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #3b82f6;
+            bottom: -10%;
+            left: -5%;
+            animation: pulse 8s ease-in-out infinite 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.1); }
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .hero-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--accent-light);
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-title .highlight {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-300);
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(249,115,22,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--accent);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--accent);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-graphic {
+            position: relative;
+            width: 450px;
+            height: 450px;
+        }
+
+        .hero-ring {
+            position: absolute;
+            border: 2px solid rgba(249,115,22,0.2);
+            border-radius: 50%;
+            animation: ringPulse 4s ease-in-out infinite;
+        }
+
+        .hero-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-ring:nth-child(2) {
+            width: 75%;
+            height: 75%;
+            top: 12.5%;
+            left: 12.5%;
+            animation-delay: 0.5s;
+        }
+
+        .hero-ring:nth-child(3) {
+            width: 50%;
+            height: 50%;
+            top: 25%;
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.6; }
+        }
+
+        .hero-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow);
+            animation: centerPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes centerPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .hero-center i {
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .hero-float-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            animation: iconFloat 4s ease-in-out infinite;
+        }
+
+        .hero-float-icon i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .hero-float-icon:nth-child(5) { top: 5%; left: 50%; transform: translateX(-50%); }
+        .hero-float-icon:nth-child(6) { top: 30%; right: 0; animation-delay: 0.5s; }
+        .hero-float-icon:nth-child(7) { bottom: 30%; right: 0; animation-delay: 1s; }
+        .hero-float-icon:nth-child(8) { bottom: 5%; left: 50%; transform: translateX(-50%); animation-delay: 1.5s; }
+        .hero-float-icon:nth-child(9) { bottom: 30%; left: 0; animation-delay: 2s; }
+        .hero-float-icon:nth-child(10) { top: 30%; left: 0; animation-delay: 2.5s; }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-float-icon:nth-child(5),
+        .hero-float-icon:nth-child(8) {
+            animation-name: iconFloatCenter;
+        }
+
+        @keyframes iconFloatCenter {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* ========== TRUSTED BY ========== */
+        .trusted {
+            background: var(--gray-50);
+            padding: 50px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .trusted-title {
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trusted-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gray-400);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .trusted-logo:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-dark {
+            background: var(--gradient-primary);
+        }
+
+        .section-gray {
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249,115,22,0.1);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-dark .section-badge {
+            background: rgba(249,115,22,0.2);
+            color: var(--accent-light);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 15px;
+        }
+
+        .section-dark .section-title {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+        }
+
+        .section-dark .section-subtitle {
+            color: var(--gray-400);
+        }
+
+        /* ========== ABOUT CARDS ========== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .about-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .about-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-icon.red {
+            background: rgba(239,68,68,0.1);
+            color: var(--error);
+        }
+
+        .about-icon.green {
+            background: rgba(16,185,129,0.1);
+            color: var(--success);
+        }
+
+        .about-icon.orange {
+            background: rgba(249,115,22,0.1);
+            color: var(--accent);
+        }
+
+        .about-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .about-list li:last-child {
+            border-bottom: none;
+        }
+
+        .about-list li i {
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        .about-list.red li i { color: var(--error); }
+        .about-list.green li i { color: var(--success); }
+        .about-list.orange li i { color: var(--accent); }
+
+        /* ========== SERVICES ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover .service-features li,
+        .service-card:hover .service-link {
+            color: var(--white);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .service-card > p {
+            color: var(--gray-600);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-features {
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            transition: color 0.3s ease;
+        }
+
+        .service-features li i {
+            color: var(--success);
+            font-size: 0.75rem;
+        }
+
+        .service-card:hover .service-features li i {
+            color: var(--accent-light);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+        }
+
+        /* ========== HOW IT WORKS ========== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 70px;
+            left: 20%;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+            border-radius: 4px;
+        }
+
+        .step-card {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            position: relative;
+            z-index: 1;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step-number span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .step-card h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .step-card p {
+            color: var(--gray-400);
+            margin-bottom: 15px;
+        }
+
+        .step-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(249,115,22,0.2);
+            color: var(--accent-light);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ========== RESULTS ========== */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .results-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .results-content > p {
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .result-stat {
+            background: var(--gradient-primary);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .result-stat:hover {
+            transform: scale(1.05);
+        }
+
+        .result-stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-stat-label {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+
+        /* Comparison */
+        .comparison {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comparison-header span {
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-header .before {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .comparison-header .after {
+            background: var(--gradient-accent);
+            color: var(--white);
+        }
+
+        .comparison-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comparison-body > div {
+            padding: 25px;
+        }
+
+        .comparison-body li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .comparison-body li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-body .before-list li i { color: var(--error); }
+        .comparison-body .after-list li i { color: var(--success); }
+
+        /* ========== FEATURE BOX ========== */
+        .feature-box {
+            background: var(--gradient-primary);
+            border-radius: 25px;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(60px);
+        }
+
+        .feature-box-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .feature-box-icon i {
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .feature-box h3 {
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            color: var(--gray-400);
+            margin-bottom: 25px;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: var(--gray-100);
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-stars i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--gray-600);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info span {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* ========== FEATURES ========== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+
+        /* ========== FAQ ========== */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 22px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-question h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 25px 22px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ========== CTA ========== */
+        .cta {
+            background: var(--gradient-accent);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 350px;
+            height: 350px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 35px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cta-trust {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .cta-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: var(--gray-600);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+        }
+
+        .contact-method-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-method-icon i {
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .contact-method-info h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .contact-method-info p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-bottom: 3px;
+        }
+
+        .contact-method-info a {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .contact-method-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--gray-100);
+        }
+
+        .contact-form h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group label .required {
+            color: var(--error);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            color: var(--gray-700);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 45px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-accent);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-privacy {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .form-privacy i {
+            color: var(--success);
+        }
+
+        /* ========== TRUST BADGES ========== */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .trust-badge {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+        }
+
+        .trust-badge-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+
+        .trust-badge-icon i {
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .trust-badge h4 {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+
+        .trust-badge p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--primary);
+            color: var(--gray-300);
+            padding: 70px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand > p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: var(--gray-400);
+        }
+
+        .footer-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-weight: 600;
+            padding: 12px 20px;
+            background: rgba(249,115,22,0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-email:hover {
+            background: rgba(249,115,22,0.2);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.05);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .footer-badge i {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent);
+        }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-glow);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ========== SCROLL PROGRESS ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--gradient-accent);
+            z-index: 9999;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .results-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .services-grid,
+            .steps-grid,
+            .testimonials-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-grid::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+            }
+
+            .trusted-logos {
+                gap: 25px;
+            }
+
+            .trusted-logo {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.9rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 25px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-trust {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <svg class="preloader-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#f97316"/>
+                    <stop offset="100%" style="stop-color:#fbbf24"/>
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="rgba(249,115,22,0.1)"/>
+            <path d="M50 15 L62 40 L50 32 L38 40 Z" fill="url(#preloaderGrad)"/>
+            <rect x="42" y="38" width="16" height="30" rx="3" fill="url(#preloaderGrad)"/>
+            <path d="M35 68 L42 55 L42 68 Z" fill="url(#preloaderGrad)"/>
+            <path d="M65 68 L58 55 L58 68 Z" fill="url(#preloaderGrad)"/>
+            <ellipse cx="50" cy="78" rx="8" ry="12" fill="#fbbf24"/>
+            <ellipse cx="50" cy="82" rx="5" ry="8" fill="#f97316"/>
+        </svg>
+        <div class="preloader-spinner"></div>
+        <p class="preloader-text">Launching Your Career</p>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f97316"/>
+                            <stop offset="100%" style="stop-color:#fbbf24"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="25" cy="25" r="24" fill="none" stroke="url(#logoGrad)" stroke-width="1.5"/>
+                    <path d="M25 8 L32 20 L25 16 L18 20 Z" fill="url(#logoGrad)"/>
+                    <rect x="20" y="18" width="10" height="16" rx="2" fill="url(#logoGrad)"/>
+                    <path d="M16 34 L20 26 L20 34 Z" fill="url(#logoGrad)"/>
+                    <path d="M34 34 L30 26 L30 34 Z" fill="url(#logoGrad)"/>
+                    <ellipse cx="25" cy="38" rx="4" ry="6" fill="#fbbf24"/>
+                </svg>
+                <span class="logo-text">Launch<span>Pad</span></span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link nav-cta">Get Started</a>
+            </div>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-grid"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    Trusted by 500+ Professionals
+                </div>
+
+                <h1 class="hero-title">
+                    Land Your <span class="highlight">Dream Job</span> in 30 Days or Less
+                </h1>
+
+                <p class="hero-subtitle">
+                    Professional resume writing and career services that get you noticed, interviewed, and hired by world-class companies.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get Your Free Resume Review
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-arrow-right"></i>
+                        Explore Services
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">500+</div>
+                        <div class="hero-stat-label">Professionals Hired</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">94%</div>
+                        <div class="hero-stat-label">Success Rate</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">4.9<i class="fas fa-star" style="font-size:1rem;margin-left:5px;"></i></div>
+                        <div class="hero-stat-label">Client Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-graphic">
+                    <div class="hero-ring"></div>
+                    <div class="hero-ring"></div>
+                    <div class="hero-ring"></div>
+                    <div class="hero-center">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="hero-float-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="hero-float-icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="hero-float-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="hero-float-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="hero-float-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="hero-float-icon"><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trusted">
+        <div class="container">
+            <p class="trusted-title">Our Clients Get Hired By World-Class Companies</p>
+            <div class="trusted-logos">
+                <span class="trusted-logo">Google</span>
+                <span class="trusted-logo">Microsoft</span>
+                <span class="trusted-logo">Amazon</span>
+                <span class="trusted-logo">Apple</span>
+                <span class="trusted-logo">Meta</span>
+                <span class="trusted-logo">Netflix</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    The Problem
+                </span>
+                <h2 class="section-title">Your Resume Has Just 6 Seconds to Impress</h2>
+                <p class="section-subtitle">Are you making these career-killing mistakes?</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon red">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <h3>The Harsh Reality</h3>
+                    <ul class="about-list red">
+                        <li><i class="fas fa-times"></i> Resume rejected by ATS before humans see it</li>
+                        <li><i class="fas fa-times"></i> LinkedIn profile invisible to recruiters</li>
+                        <li><i class="fas fa-times"></i> Generic cover letters getting ignored</li>
+                        <li><i class="fas fa-times"></i> Few interviews despite many applications</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>The LaunchPad Solution</h3>
+                    <ul class="about-list green">
+                        <li><i class="fas fa-check"></i> ATS-optimized resumes that beat the bots</li>
+                        <li><i class="fas fa-check"></i> LinkedIn profiles that attract recruiters</li>
+                        <li><i class="fas fa-check"></i> Compelling cover letters that stand out</li>
+                        <li><i class="fas fa-check"></i> Interview coaching for confidence</li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon orange">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Your New Reality</h3>
+                    <ul class="about-list orange">
+                        <li><i class="fas fa-arrow-right"></i> 3x more interview callbacks</li>
+                        <li><i class="fas fa-arrow-right"></i> Recruiters reaching out to YOU</li>
+                        <li><i class="fas fa-arrow-right"></i> Multiple job offers to choose from</li>
+                        <li><i class="fas fa-arrow-right"></i> Higher salary negotiations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-gray" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-briefcase"></i>
+                    Our Services
+                </span>
+                <h2 class="section-title">Complete Career Transformation Services</h2>
+                <p class="section-subtitle">Everything you need to land your dream job</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Professional Resume Writing</h3>
+                    <p>Transform your resume into a powerful marketing document that passes ATS filters.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> ATS-optimized formatting</li>
+                        <li><i class="fas fa-check"></i> Achievement-focused content</li>
+                        <li><i class="fas fa-check"></i> Industry-specific keywords</li>
+                        <li><i class="fas fa-check"></i> Unlimited revisions</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn Optimization</h3>
+                    <p>Transform your profile into a recruiter magnet that works 24/7.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Compelling headline creation</li>
+                        <li><i class="fas fa-check"></i> Keyword-rich about section</li>
+                        <li><i class="fas fa-check"></i> Achievement descriptions</li>
+                        <li><i class="fas fa-check"></i> Recruiter outreach templates</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Cover Letter Writing</h3>
+                    <p>Compelling cover letters that tell your unique story.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Customized templates</li>
+                        <li><i class="fas fa-check"></i> Story-driven approach</li>
+                        <li><i class="fas fa-check"></i> Company-specific research</li>
+                        <li><i class="fas fa-check"></i> Multiple custom letters</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Interview Coaching</h3>
+                    <p>Walk in confident and leave them ready to hire you.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Mock interview sessions</li>
+                        <li><i class="fas fa-check"></i> STAR method training</li>
+                        <li><i class="fas fa-check"></i> Body language coaching</li>
+                        <li><i class="fas fa-check"></i> Salary negotiation prep</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Career Strategy Session</h3>
+                    <p>Define your path and create an actionable roadmap.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 60-minute strategy session</li>
+                        <li><i class="fas fa-check"></i> Career assessment</li>
+                        <li><i class="fas fa-check"></i> 90-day job search plan</li>
+                        <li><i class="fas fa-check"></i> Networking strategy</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Application Management</h3>
+                    <p>Let us handle the heavy lifting of your job search.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom applications</li>
+                        <li><i class="fas fa-check"></i> Application tracking</li>
+                        <li><i class="fas fa-check"></i> Company research</li>
+                        <li><i class="fas fa-check"></i> Follow-up sequences</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-dark" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-cogs"></i>
+                    How It Works
+                </span>
+                <h2 class="section-title">Get Hired in 3 Simple Steps</h2>
+                <p class="section-subtitle">Our proven process takes you from overlooked to in-demand</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number"><span>1</span></div>
+                    <h3>Submit Your Information</h3>
+                    <p>Complete our questionnaire about your background, goals, and timeline.</p>
+                    <span class="step-time"><i class="fas fa-clock"></i> 30-45 minutes</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number"><span>2</span></div>
+                    <h3>We Craft Your Documents</h3>
+                    <p>Our experts create your materials with unlimited revisions until perfect.</p>
+                    <span class="step-time"><i class="fas fa-clock"></i> 3-5 business days</span>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number"><span>3</span></div>
+                    <h3>Land Interviews & Offers</h3>
+                    <p>Apply with confidence and watch interview requests roll in.</p>
+                    <span class="step-time"><i class="fas fa-clock"></i> 30 days average</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section" id="results">
+        <div class="container">
+            <div class="results-grid">
+                <div class="results-content">
+                    <span class="section-badge">
+                        <i class="fas fa-chart-bar"></i>
+                        Proven Results
+                    </span>
+                    <h2>The LaunchPad Difference</h2>
+                    <p>Our clients consistently report dramatic improvements in their job search results.</p>
+                    
+                    <div class="results-stats">
+                        <div class="result-stat">
+                            <div class="result-stat-number">3x</div>
+                            <div class="result-stat-label">More Interview Callbacks</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="result-stat-number">78%</div>
+                            <div class="result-stat-label">Land Offers in 60 Days</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="result-stat-number">$18K</div>
+                            <div class="result-stat-label">Average Salary Increase</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="result-stat-number">97%</div>
+                            <div class="result-stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison">
+                    <div class="comparison-header">
+                        <span class="before">Before LaunchPad</span>
+                        <span class="after">After LaunchPad</span>
+                    </div>
+                    <div class="comparison-body">
+                        <div>
+                            <ul class="before-list">
+                                <li><i class="fas fa-times"></i> 2-3 interviews per month</li>
+                                <li><i class="fas fa-times"></i> 6+ months job search</li>
+                                <li><i class="fas fa-times"></i> $75K average offer</li>
+                                <li><i class="fas fa-times"></i> Generic resume</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="after-list">
+                                <li><i class="fas fa-check"></i> 8-12 interviews per month</li>
+                                <li><i class="fas fa-check"></i> 45 days to job offer</li>
+                                <li><i class="fas fa-check"></i> $95K average offer</li>
+                                <li><i class="fas fa-check"></i> ATS-optimized resume</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Box -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="results-grid">
+                <div class="feature-box">
+                    <div class="feature-box-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Ready to Transform Your Career?</h3>
+                    <p>Join hundreds of professionals who have already accelerated their careers.</p>
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get Started Today
+                    </a>
+                </div>
+
+                <div class="results-content">
+                    <span class="section-badge">
+                        <i class="fas fa-rocket"></i>
+                        Your Career Awaits
+                    </span>
+                    <h2>Take the Next Step</h2>
+                    <p>Our expert team is ready to help you create compelling career documents that open doors to amazing opportunities.</p>
+                    
+                    <div class="results-stats">
+                        <div class="result-stat">
+                            <div class="result-stat-number">500+</div>
+                            <div class="result-stat-label">Careers Transformed</div>
+                        </div>
+                        <div class="result-stat">
+                            <div class="result-stat-number">4.9</div>
+                            <div class="result-stat-label">Star Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-quote-right"></i>
+                    Testimonials
+                </span>
+                <h2 class="section-title">Real People. Real Results.</h2>
+                <p class="section-subtitle">Hear from professionals who transformed their careers</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Within 2 weeks of using my new resume and LinkedIn profile, I had 6 interview requests. Accepted an offer for $142K, a $35K increase!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah M.</h4>
+                            <p>Software Engineer at Google</p>
+                            <span>Previously: Mid-level Developer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Changing careers felt impossible. LaunchPad helped me reframe my experience. Landed my dream role at Microsoft with a 40% salary bump!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div class="testimonial-info">
+                            <h4>Michael T.</h4>
+                            <p>L&D Manager at Microsoft</p>
+                            <span>Previously: Teacher</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"After being laid off, LaunchPad turned my resume around in 4 days. Went from hopeless to landing 3 offers in 5 weeks!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JR</div>
+                        <div class="testimonial-info">
+                            <h4>James R.</h4>
+                            <p>Product Manager at Amazon</p>
+                            <span>Previously: Associate PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-award"></i>
+                    Why Choose Us
+                </span>
+                <h2 class="section-title">Why Professionals Choose LaunchPad</h2>
+                <p class="section-subtitle">We are career transformation specialists</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Certified Experts</h3>
+                    <p>CPRW certified writers with 10+ years experience and Fortune 500 recruiting background.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Quality delivered in 3-7 days with rush options available. Every document custom-crafted.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Results Driven</h3>
+                    <p>94% of clients report increased interviews. 78% land offers within 60 days.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Confidential & Secure</h3>
+                    <p>Bank-level encryption and NDA available. Your privacy is paramount.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Satisfaction Guarantee</h3>
+                    <p>Unlimited revisions until you are thrilled with your documents.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>Every resume starts from scratch. No templates. Your story deserves custom treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-gray" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-question-circle"></i>
+                    FAQ
+                </span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does the process take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Most clients receive completed materials in 5-7 business days. We offer expedited (3-4 days) and rush options (24-48 hours) for urgent needs.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What if I do not get more interviews?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer a 100% satisfaction guarantee. If you are not seeing increased interview activity within 60 days, we will revise your documents for free.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you have experience in my industry?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! Our team includes specialists across all major industries: technology, healthcare, finance, marketing, sales, operations, education, and more.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will my resume pass ATS systems?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! ATS optimization is built into every resume. We use clean formatting, appropriate keywords, and test through ATS simulators before delivery.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How many revisions do I get?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer unlimited revisions during your support period. We work with you until it is perfect.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my information confidential?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. We use bank-level encryption, never share your information, and can sign an NDA upon request.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Dream Job Is One Click Away</h2>
+                <p>Join 500+ professionals who transformed their careers with LaunchPad</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-white">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Now
+                    </a>
+                    <a href="mailto:launchpadcareers@hotmail.com" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Email Us Directly
+                    </a>
+                </div>
+                <div class="cta-trust">
+                    <div class="cta-trust-item">
+                        <i class="fas fa-lock"></i>
+                        Secure & Confidential
+                    </div>
+                    <div class="cta-trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        Satisfaction Guaranteed
+                    </div>
+                    <div class="cta-trust-item">
+                        <i class="fas fa-bolt"></i>
+                        Fast 5-Day Delivery
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-badge">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us
+                    </span>
+                    <h2>Let Us Talk About Your Career</h2>
+                    <p>Have questions? We are here to help you take the next step in your career journey.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>Email Us</h4>
+                                <p>We respond within 24 hours</p>
+                                <a href="mailto:launchpadcareers@hotmail.com">launchpadcareers@hotmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>Business Hours</h4>
+                                <p>Monday to Friday: 9am to 6pm EST</p>
+                                <p>Saturday: 10am to 2pm EST</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="contact-method-info">
+                                <h4>Your Privacy Matters</h4>
+                                <p>All communications are confidential and secure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="https://formspree.io/f/maqldekk" method="POST" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Career Level <span class="required">*</span></label>
+                            <select name="careerLevel" required>
+                                <option value="">Select your level</option>
+                                <option value="recent-graduate">Recent Graduate</option>
+                                <option value="entry-level">Entry Level (0-3 years)</option>
+                                <option value="mid-level">Mid-Level (4-10 years)</option>
+                                <option value="senior-level">Senior Level (10+ years)</option>
+                                <option value="executive">Executive / C-Suite</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Service Interested In <span class="required">*</span></label>
+                            <select name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="resume-writing">Resume Writing</option>
+                                <option value="linkedin-optimization">LinkedIn Optimization</option>
+                                <option value="cover-letter">Cover Letter Writing</option>
+                                <option value="interview-coaching">Interview Coaching</option>
+                                <option value="career-strategy">Career Strategy</option>
+                                <option value="full-package">Complete Package</option>
+                                <option value="not-sure">Not Sure (Need Guidance)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tell Us About Your Situation</label>
+                            <textarea name="message" placeholder="Share your career goals, challenges, or questions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+
+                        <p class="form-privacy">
+                            <i class="fas fa-lock"></i>
+                            Your information is secure and will never be shared.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">
+                    <i class="fas fa-certificate"></i>
+                    Trusted
+                </span>
+                <h2 class="section-title">Certified, Trusted, Proven</h2>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>CPRW Certified</h4>
+                    <p>Professional Writers</p>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>4.9 Star Rating</h4>
+                    <p>500+ Reviews</p>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>SSL Secure</h4>
+                    <p>Bank-Level Encryption</p>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4>Industry Leader</h4>
+                    <p>Recognized Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f97316"/>
+                                    <stop offset="100%" style="stop-color:#fbbf24"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="25" r="24" fill="none" stroke="url(#footerLogoGrad)" stroke-width="1.5"/>
+                            <path d="M25 8 L32 20 L25 16 L18 20 Z" fill="url(#footerLogoGrad)"/>
+                            <rect x="20" y="18" width="10" height="16" rx="2" fill="url(#footerLogoGrad)"/>
+                            <path d="M16 34 L20 26 L20 34 Z" fill="url(#footerLogoGrad)"/>
+                            <path d="M34 34 L30 26 L30 34 Z" fill="url(#footerLogoGrad)"/>
+                            <ellipse cx="25" cy="38" rx="4" ry="6" fill="#fbbf24"/>
+                        </svg>
+                        <span class="logo-text">Launch<span>Pad</span></span>
+                    </a>
+                    <p>Helping talented professionals get noticed, interviewed, and hired for the roles they deserve.</p>
+                    <a href="mailto:launchpadcareers@hotmail.com" class="footer-email">
+                        <i class="fas fa-envelope"></i>
+                        launchpadcareers@hotmail.com
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Resume Writing</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> LinkedIn Optimization</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Cover Letters</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Interview Coaching</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Trust & Security</h4>
+                    <div class="footer-badges">
+                        <div class="footer-badge"><i class="fas fa-certificate"></i> CPRW Certified</div>
+                        <div class="footer-badge"><i class="fas fa-shield-alt"></i> SSL Secure</div>
+                        <div class="footer-badge"><i class="fas fa-lock"></i> GDPR Compliant</div>
+                        <div class="footer-badge"><i class="fas fa-star"></i> 4.9 Rating</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 LaunchPad Careers. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="mailto:launchpadcareers@hotmail.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navbar Scroll
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu
+        var mobileToggle = document.getElementById('mobileToggle');
+        var navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking links
+        var navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                var target = document.querySelector(targetId);
+                if (target) {
+                    var offset = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        var faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+                
+                // Close all
+                faqItems.forEach(function(faq) {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked if not active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top
+        var backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll Progress
+        var scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Form Submit
+        var contactForm = document.getElementById('contactForm');
+        var submitBtn = document.getElementById('submitBtn');
+
+        contactForm.addEventListener('submit', function() {
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+        });
+
+        // Dynamic Year
+        var yearElements = document.querySelectorAll('.footer-bottom p');
+        var currentYear = new Date().getFullYear();
+        yearElements.forEach(function(el) {
+            el.innerHTML = el.innerHTML.replace('2024', currentYear);
+        });
+
+        // Console Branding
+        console.log('%c LaunchPad Careers ', 'background: linear-gradient(135deg, #f97316, #fbbf24); color: white; font-size: 20px; padding: 10px 20px; border-radius: 5px; font-weight: bold;');
+        console.log('%c Contact: launchpadcareers@hotmail.com ', 'color: #f97316; font-size: 12px;');
+    </script>
+</body>
+</html>
